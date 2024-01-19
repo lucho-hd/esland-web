@@ -1,0 +1,10 @@
+---
+    import CookieLink from "./CookieLink.astro";
+
+    const { description, url } = Astro.props;
+---
+
+<p>
+    { description }
+    <CookieLink url={ url }/>
+</p>

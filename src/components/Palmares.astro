@@ -1,0 +1,15 @@
+---
+    import StreamerCard from "./StreamerCard.astro";
+    import palmares     from "../data/editions-info.json";
+
+    interface Props {
+        edicion: string,
+    }
+
+    const { edicion } = Astro.props;
+    let index = 3;
+
+    let datosSeleccionados = palmares.find((palmar) => palmar.edition === edicion)
+
+    
+---

@@ -1,0 +1,69 @@
+---
+    import BentoItem from '../components/BentoItem.astro';
+    import { getI18n } from '../i18n';
+    
+    const { currentLocale } = Astro;
+    const i18n = getI18n({ currentLocale });
+---
+
+<section 
+    class= {`
+        w-full 
+        max-w-[1400px] 
+        grid grid-cols-10 auto-rows-[30rem] gap-4 
+        mx-auto p-6 md:p-12 lg:p-20
+    `}
+>
+    <BentoItem class="col-span-10 lg:col-span-4" title={ i18n.BENTO_TITLE_1 }>
+        <p class="max-w-xl text-base md:text-lg" slot="content" set:html={ i18n.BENTO_CONTENT_1 }></p>
+
+        <div 
+            class="absolute left-0 top-0 bottom-0 w-full h-full group-hover:scale-110 
+            transition-scale duration-1000 ease-in-out opacity-90 bg-blend-luminosity bg-center bg-cover 
+            bg-no-repeat bg-blue-950 -z-10" 
+            style="background-image: url('/img/mountain.webp')"
+            slot="image"
+            >
+        </div>
+    </BentoItem>
+
+    <BentoItem class="col-span-10 lg:col-span-6" title={ i18n.BENTO_TITLE_2 } subtitle={ i18n.BENTO_SUBTITLE_2 }>
+        <p class="max-w-xl text-base md:text-lg" slot="content" set:html={ i18n.BENTO_CONTENT_2 }></p>
+
+        <div 
+            class="absolute left-0 top-0 bottom-0 w-full h-full group-hover:scale-110 
+            transition-scale duration-1000 ease-in-out opacity-90 bg-blend-luminosity bg-center bg-cover 
+            bg-no-repeat bg-blue-900 -z-10" 
+            style="background-image: url('/img/grefg.webp')"
+            slot="image"
+        >
+        </div>
+
+    </BentoItem>
+
+    <BentoItem class="col-span-10 lg:col-span-6" title={ i18n.BENTO_TITLE_3 } subtitle={ i18n.BENTO_SUBTITLE_3 }>
+        <p class="max-w-xl text-base md:text-lg" slot="content" set:html={ i18n.BENTO_CONTENT_3 }></p>
+
+        <div 
+            class="absolute left-0 top-0 bottom-0 w-full h-full group-hover:scale-110 
+            transition-scale duration-1000 ease-in-out opacity-90 bg-blend-luminosity bg-center bg-cover 
+            bg-no-repeat bg-blue-900 -z-10" 
+            style="background-image: url('/img/pistas.webp')"
+            slot="image"
+        >
+        </div>
+    </BentoItem>
+
+    <BentoItem class="col-span-10 lg:col-span-4" title={ i18n.BENTO_TITLE_4 }>
+        <p class="max-w-xl text-base md:text-lg" slot="content" set:html={ i18n.BENTO_CONTENT_4 }></p>
+
+        <div 
+            class="absolute left-0 top-0 bottom-0 w-full h-full group-hover:scale-110 
+            transition-scale duration-1000 ease-in-out opacity-90 bg-blend-luminosity bg-center bg-cover 
+            bg-no-repeat bg-blue-950 -z-10" 
+            style="background-image: url('/img/laptop.webp')"
+            slot="image"
+        >
+        </div>
+    </BentoItem>
+</section>

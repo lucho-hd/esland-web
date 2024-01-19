@@ -1,0 +1,42 @@
+---
+    import { getI18n } from '../i18n';
+    import Button      from './Button.astro';
+    import Logo        from './Logo.astro';
+    
+    const { currentLocale } = Astro;
+    const i18n = getI18n({ currentLocale });
+---
+ <div class="relative h-dvh w-full max-w-[100vw] md:aspect-video md:h-[80ch] xl:h-full">
+    <div class="absolute inset-0 h-full justify-center z-10 m-auto flex flex-col items-center w-full">
+        <section class="absolute z-10 animate-fade-up flex justify-center items-center gap-8 flex-col">
+            <h1 class="flex items-center gap-5 text-4xl md:text-6xl lg:gap-20 lg:text-8xl font-tomaso">
+                <span>E</span>
+                <span>S</span>
+                <span>L</span>
+                <Logo class="h-9 w-auto md:h-[3.75rem] lg:h-24 scale-150" aria-label="A"/>
+                <span>N</span>
+                <span>D</span>
+            </h1>
+            
+            <p class="subtitle text-xl lg:text-2xl text-center text-wrap font-jura px-4">{ i18n.HERO_SUBTITLE }</p>
+            <Button target="_self"class="text-blue-950 animate-fade-up bg-white"url="/vota">
+                { i18n.VIDEO_BUTTON }
+            </Button>
+        </section>
+        
+        <video 
+        class="w-full h-screen object-cover object-top animate-fade animate-duration-1000 ease-in-out" 
+        src="/video.mp4" 
+        muted 
+        loop 
+        autoplay 
+        style="clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 50% 100%, 0 85%);"></video>
+    </div>
+  
+    <video 
+        class="absolute blur-3xl -z-40" 
+        src="/video.mp4" 
+        autoplay
+        loop 
+        muted ></video>
+</div>
